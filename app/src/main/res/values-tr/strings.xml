@@ -52,4 +52,29 @@
     <string name="about_not_affiliated">ipleak.net, AirVPN, ifconfig.co veya herhangi bir VPN sağlayıcısıyla bağlantılı değildir.</string>
     <string name="about_support_tor">Tor Project ve özgür, açık internet misyonunu destekliyoruz.</string>
     <string name="about_licenses_title">Açık kaynak lisansları</string>
+
+    <string name="history">Geçmiş</string>
+    <string name="history_empty">Henüz geçmiş yok.</string>
+    <string name="history_local_note">Sadece bu cihazda saklanır, hiçbir yere gönderilmez.</string>
+    <string name="history_clear">Geçmişi temizle</string>
+    <string name="history_clear_title">Geçmiş temizlensin mi?</string>
+    <string name="history_clear_text">Kaydedilen tüm IP adresleri bu cihazdan silinecek.</string>
+    <string name="history_flag_vpn">VPN</string>
+    <string name="history_flag_tor">Tor</string>
+    <string name="history_via">%1$s üzerinden</string>
+    <string name="cancel">İptal</string>
+    <string name="delete">Sil</string>
+    <string name="ok">Tamam</string>
+    <string name="family_v4">IPv4</string>
+    <string name="family_v6">IPv6</string>
+    <string name="changed_since_last">Son açılıştan beri IP adresin değişti</string>
+    <string name="changed_now">IP adresin değişti</string>
+    <string name="notif_channel_name">IP adresi değişiklikleri</string>
+    <string name="notif_channel_desc">Uygulama açıkken genel IP adresin değişirse gösterilir</string>
+    <string name="notif_title">IP adresi değişti</string>
+    <string name="notif_public">IP adresin değişti</string>
+    <string name="settings_notify_title">Bildirimler</string>
+    <string name="settings_notify_label">IP adresim değişince bildir</string>
+    <string name="settings_notify_note">Uygulama açıkken çalışır. Arka planda takip v2 ile geliyor.</string>
+    <string name="settings_notify_denied">Bildirim izni kapalı. Android ayarlarından açabilirsin.</string>
 </resources>

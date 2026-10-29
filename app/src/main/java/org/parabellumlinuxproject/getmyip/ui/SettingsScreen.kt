@@ -1,5 +1,9 @@
 package org.parabellumlinuxproject.getmyip.ui
 
+import android.Manifest
+import android.os.Build
+import androidx.activity.compose.rememberLauncherForActivityResult
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -10,9 +14,11 @@ import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.RadioButton
+import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
@@ -26,6 +32,7 @@ import org.parabellumlinuxproject.getmyip.R
 import org.parabellumlinuxproject.getmyip.core.IfconfigCoProvider
 import org.parabellumlinuxproject.getmyip.core.IpLeakProvider
 import org.parabellumlinuxproject.getmyip.core.Providers
+import org.parabellumlinuxproject.getmyip.notify.Notifier
 import org.parabellumlinuxproject.getmyip.settings.AppSettings
 
 @Composable
@@ -35,6 +42,11 @@ fun SettingsScreen(onBack: () -> Unit) {
     var selected by remember { mutableStateOf(settings.providerId) }
     var url by remember { mutableStateOf(settings.customUrl) }
     var message by remember { mutableStateOf<Int?>(null) }
+    var notify by remember { mutableStateOf(settings.notifyOnChange) }
+    var permissionTick by remember { mutableIntStateOf(0) }
+    val permissionLauncher = rememberLauncherForActivityResult(
+        ActivityResultContracts.RequestPermission()
+    ) { permissionTick++ }
 
     SubScreen(stringResource(R.string.settings), onBack) {
         InfoCard(stringResource(R.string.settings_provider_title)) {
@@ -96,6 +108,34 @@ fun SettingsScreen(onBack: () -> Unit) {
                 message?.let { Text(stringResource(it), color = MaterialTheme.colorScheme.primary) }
             }
             SmallNote(stringResource(R.string.settings_provider_note))
+        }
+
+        InfoCard(stringResource(R.string.settings_notify_title)) {
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                verticalAlignment = Alignment.CenterVertically,
+            ) {
+                Text(
+                    stringResource(R.string.settings_notify_label),
+                    modifier = Modifier.weight(1f),
+                    style = MaterialTheme.typography.bodyLarge,
+                )
+                Switch(
+                    checked = notify,
+                    onCheckedChange = { on ->
+                        notify = on
+                        settings.notifyOnChange = on
+                        if (on && Build.VERSION.SDK_INT >= 33 && !Notifier.canNotify(context)) {
+                            permissionLauncher.launch(Manifest.permission.POST_NOTIFICATIONS)
+                        }
+                    },
+                )
+            }
+            // permissionTick makes this line re-check after the permission dialog closes.
+            if (notify && permissionTick >= 0 && !Notifier.canNotify(context)) {
+                SmallNote(stringResource(R.string.settings_notify_denied))
+            }
+            SmallNote(stringResource(R.string.settings_notify_note))
         }
     }
 }

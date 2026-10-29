@@ -21,6 +21,12 @@ class AppSettings(context: Context) {
             prefs.edit().putString(KEY_CUSTOM_URL, value).apply()
         }
 
+    var notifyOnChange: Boolean
+        get() = prefs.getBoolean(KEY_NOTIFY, true)
+        set(value) {
+            prefs.edit().putBoolean(KEY_NOTIFY, value).apply()
+        }
+
     fun provider(): IpProvider = when (providerId) {
         PROVIDER_IFCONFIG -> IfconfigCoProvider
         PROVIDER_CUSTOM -> Providers.custom(customUrl) ?: IpLeakProvider
@@ -33,5 +39,6 @@ class AppSettings(context: Context) {
         const val PROVIDER_CUSTOM = "custom"
         private const val KEY_PROVIDER = "provider"
         private const val KEY_CUSTOM_URL = "custom_url"
+        private const val KEY_NOTIFY = "notify_on_change"
     }
 }

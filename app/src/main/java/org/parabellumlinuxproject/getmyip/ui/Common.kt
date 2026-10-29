@@ -89,3 +89,10 @@ internal fun SmallNote(text: String) {
         color = MaterialTheme.colorScheme.onSurfaceVariant,
     )
 }
+
+@Composable
+internal fun familyLabel(family: org.parabellumlinuxproject.getmyip.core.Family): String =
+    stringResource(
+        if (family == org.parabellumlinuxproject.getmyip.core.Family.V4) R.string.family_v4
+        else R.string.family_v6
+    )

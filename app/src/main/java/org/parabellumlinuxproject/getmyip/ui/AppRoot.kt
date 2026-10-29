@@ -7,7 +7,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 
-enum class Screen { HOME, SETTINGS, ABOUT }
+enum class Screen { HOME, HISTORY, SETTINGS, ABOUT }
 
 @Composable
 fun AppRoot() {
@@ -15,6 +15,7 @@ fun AppRoot() {
     BackHandler(enabled = screen != Screen.HOME) { screen = Screen.HOME }
     when (screen) {
         Screen.HOME -> HomeScreen(onOpen = { screen = it })
+        Screen.HISTORY -> HistoryScreen(onBack = { screen = Screen.HOME })
         Screen.SETTINGS -> SettingsScreen(onBack = { screen = Screen.HOME })
         Screen.ABOUT -> AboutScreen(onBack = { screen = Screen.HOME })
     }

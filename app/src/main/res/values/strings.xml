@@ -54,4 +54,29 @@
     <string name="about_not_affiliated">Not affiliated with ipleak.net, AirVPN, ifconfig.co or any VPN provider.</string>
     <string name="about_support_tor">We support the Tor Project and its mission for a free and open internet.</string>
     <string name="about_licenses_title">Open source licenses</string>
+
+    <string name="history">History</string>
+    <string name="history_empty">No history yet.</string>
+    <string name="history_local_note">Stored only on this device. Never sent anywhere.</string>
+    <string name="history_clear">Clear history</string>
+    <string name="history_clear_title">Clear history?</string>
+    <string name="history_clear_text">All saved IP addresses will be deleted from this device.</string>
+    <string name="history_flag_vpn">VPN</string>
+    <string name="history_flag_tor">Tor</string>
+    <string name="history_via">via %1$s</string>
+    <string name="cancel">Cancel</string>
+    <string name="delete">Delete</string>
+    <string name="ok">OK</string>
+    <string name="family_v4">IPv4</string>
+    <string name="family_v6">IPv6</string>
+    <string name="changed_since_last">Your IP address changed since last time</string>
+    <string name="changed_now">Your IP address changed</string>
+    <string name="notif_channel_name">IP address changes</string>
+    <string name="notif_channel_desc">Shown when your public IP address changes while the app is open</string>
+    <string name="notif_title">IP address changed</string>
+    <string name="notif_public">Your IP address changed</string>
+    <string name="settings_notify_title">Notifications</string>
+    <string name="settings_notify_label">Notify me when my IP address changes</string>
+    <string name="settings_notify_note">Works while the app is open. Background monitoring is coming in v2.</string>
+    <string name="settings_notify_denied">Notification permission is off. You can turn it on in Android settings.</string>
 </resources>
