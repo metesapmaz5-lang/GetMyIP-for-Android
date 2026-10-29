@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="onb_tagline" translatable="false">Everything is open source.</string>
+    <string name="onb_welcome_body">GetMyIP shows what the internet sees about your connection: your public IP address, your provider, and whether your traffic goes through a VPN or Tor.</string>
+    <string name="onb_privacy_title">Your privacy</string>
+    <string name="onb_privacy_body">• No servers, no accounts, no analytics, no ads.\n• To show your IP, the app asks an IP provider. The default is ipleak.net, and you can change it in Settings.\n• Your history stays on this device.</string>
+    <string name="onb_read_policy">Read the full privacy policy</string>
+    <string name="onb_hide_policy">Hide the privacy policy</string>
+    <string name="onb_notify_title">Notifications</string>
+    <string name="onb_notify_body">GetMyIP can tell you when your IP address changes. You can change this later in Settings.</string>
+    <string name="onb_page">%1$d / %2$d</string>
+    <string name="next">Next</string>
+    <string name="skip">Skip</string>
+    <string name="not_now">Not now</string>
+    <string name="start">Start</string>
+    <string name="allow_notifications">Allow notifications</string>
+
+    <string name="crash_title">The app crashed last time</string>
+    <string name="crash_body">This is a debug build. Copy the error and send it to the developer. Nothing is sent automatically.</string>
+    <string name="copy">Copy</string>
+    <string name="copied">Copied.</string>
+
+    <string name="privacy_title">Privacy policy</string>
+    <string name="privacy_intro">This text is also the information notice under Türkiye\'s Personal Data Protection Law (KVKK, Law No. 6698).</string>
+    <string name="privacy_s1_title">What the developer collects</string>
+    <string name="privacy_s1_body">Nothing. GetMyIP has no servers, no accounts, no analytics, no ads and no crash reporting. The developer never receives any data from the app.</string>
+    <string name="privacy_s2_title">What leaves your device</string>
+    <string name="privacy_s2_body">• To show your public IP, the app connects to the IP provider you choose. Like any website, the provider sees your IP address. The default is ipleak.net (operated by AirVPN, outside Türkiye). You can switch to ifconfig.co or your own echoip server in Settings.\n• The DNS leak test connects to ipleak.net and looks up the detected DNS servers there.\n• To detect Tor, the app downloads the Tor Project\'s public exit list from torproject.org and compares it on your device. The app does not ask the Tor Project about your address, but like any download, the server sees the connection.\n• Links in Learn and About open in your browser only when you tap them.</string>
+    <string name="privacy_s3_title">What is stored on your device</string>
+    <string name="privacy_s3_body">Your IP history (up to 500 entries) and your settings. This data is excluded from Android backups and device transfers. You can delete the history in History → Clear history, or delete everything by clearing the app\'s data or uninstalling it.</string>
+    <string name="privacy_s4_title">Permissions</string>
+    <string name="privacy_s4_body">Internet and network state, to check your connection. Notifications (optional), to tell you when your IP address changes.</string>
+    <string name="privacy_s5_title">Your rights</string>
+    <string name="privacy_s5_body">Because the developer does not receive any personal data, there is no data held by the developer to access, correct or delete. For data processed by an IP provider, contact that provider. For questions about this policy, write to %1$s.</string>
+    <string name="privacy_s6_title">Changes</string>
+    <string name="privacy_s6_body">Any change to this policy is published in the PRIVACY.md file of the source code repository.</string>
+</resources>

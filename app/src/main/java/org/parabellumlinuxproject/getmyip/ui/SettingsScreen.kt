@@ -16,6 +16,7 @@ import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
@@ -36,7 +37,7 @@ import org.parabellumlinuxproject.getmyip.notify.Notifier
 import org.parabellumlinuxproject.getmyip.settings.AppSettings
 
 @Composable
-fun SettingsScreen(onBack: () -> Unit) {
+fun SettingsScreen(onBack: () -> Unit, onOpenPrivacy: () -> Unit) {
     val context = LocalContext.current.applicationContext
     val settings = remember { AppSettings(context) }
     var selected by remember { mutableStateOf(settings.providerId) }
@@ -136,6 +137,11 @@ fun SettingsScreen(onBack: () -> Unit) {
                 SmallNote(stringResource(R.string.settings_notify_denied))
             }
             SmallNote(stringResource(R.string.settings_notify_note))
+        }
+
+        InfoCard(stringResource(R.string.privacy_title)) {
+            SmallNote(stringResource(R.string.privacy_intro))
+            TextButton(onClick = onOpenPrivacy) { Text(stringResource(R.string.onb_read_policy)) }
         }
     }
 }

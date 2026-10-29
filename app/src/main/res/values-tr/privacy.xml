@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="onb_welcome_body">GetMyIP, internetin bağlantın hakkında ne gördüğünü gösterir: genel IP adresin, servis sağlayıcın ve trafiğinin VPN ya da Tor üzerinden gidip gitmediği.</string>
+    <string name="onb_privacy_title">Gizliliğin</string>
+    <string name="onb_privacy_body">• Sunucu, hesap, analitik ve reklam yok.\n• IP adresini göstermek için uygulama bir IP sağlayıcısına sorar. Varsayılan ipleak.net\'tir, Ayarlar\'dan değiştirebilirsin.\n• Geçmişin bu cihazda kalır.</string>
+    <string name="onb_read_policy">Gizlilik politikasının tamamını oku</string>
+    <string name="onb_hide_policy">Gizlilik politikasını gizle</string>
+    <string name="onb_notify_title">Bildirimler</string>
+    <string name="onb_notify_body">GetMyIP, IP adresin değişince sana haber verebilir. Bunu daha sonra Ayarlar\'dan değiştirebilirsin.</string>
+    <string name="onb_page">%1$d / %2$d</string>
+    <string name="next">İleri</string>
+    <string name="skip">Geç</string>
+    <string name="not_now">Şimdi değil</string>
+    <string name="start">Başla</string>
+    <string name="allow_notifications">Bildirimlere izin ver</string>
+
+    <string name="crash_title">Uygulama geçen sefer çöktü</string>
+    <string name="crash_body">Bu bir debug sürümü. Hatayı kopyalayıp geliştiriciye gönder. Hiçbir şey otomatik gönderilmez.</string>
+    <string name="copy">Kopyala</string>
+    <string name="copied">Kopyalandı.</string>
+
+    <string name="privacy_title">Gizlilik politikası</string>
+    <string name="privacy_intro">Bu metin aynı zamanda 6698 sayılı Kişisel Verilerin Korunması Kanunu (KVKK) kapsamında aydınlatma metnidir.</string>
+    <string name="privacy_s1_title">Geliştiricinin topladığı veriler</string>
+    <string name="privacy_s1_body">Hiçbiri. GetMyIP\'nin sunucusu, hesap sistemi, analitiği, reklamı ve hata raporlaması yoktur. Geliştirici uygulamadan hiçbir veri almaz.</string>
+    <string name="privacy_s2_title">Cihazından çıkan veriler</string>
+    <string name="privacy_s2_body">• Genel IP adresini göstermek için uygulama seçtiğin IP sağlayıcısına bağlanır. Her web sitesi gibi sağlayıcı da IP adresini görür. Varsayılan sağlayıcı ipleak.net\'tir (işletmecisi AirVPN, Türkiye dışında). Ayarlar\'dan ifconfig.co\'ya ya da kendi echoip sunucuna geçebilirsin.\n• DNS sızıntı testi ipleak.net\'e bağlanır ve tespit edilen DNS sunucularının bilgisini orada sorgular.\n• Tor tespiti için uygulama, Tor Project\'in herkese açık çıkış listesini torproject.org\'dan indirir ve cihazında karşılaştırır. Uygulama adresini Tor Project\'e sormaz, ancak her indirmede olduğu gibi sunucu bağlantıyı görür.\n• Öğren ve Hakkında bölümlerindeki linkler sadece dokunduğunda tarayıcında açılır.</string>
+    <string name="privacy_s3_title">Cihazında saklanan veriler</string>
+    <string name="privacy_s3_body">IP geçmişin (en fazla 500 kayıt) ve ayarların. Bu veriler Android yedeklerine ve cihazdan cihaza aktarıma dahil edilmez. Geçmişi Geçmiş → Geçmişi temizle ile, her şeyi ise uygulama verilerini temizleyerek ya da uygulamayı kaldırarak silebilirsin.</string>
+    <string name="privacy_s4_title">İzinler</string>
+    <string name="privacy_s4_body">İnternet ve ağ durumu: bağlantını kontrol etmek için. Bildirimler (isteğe bağlı): IP adresin değişince haber vermek için.</string>
+    <string name="privacy_s5_title">Hakların</string>
+    <string name="privacy_s5_body">Geliştirici hiçbir kişisel veri almadığı için geliştiricide erişilecek, düzeltilecek ya da silinecek bir veri bulunmaz. Bir IP sağlayıcısının işlediği veriler için o sağlayıcıyla iletişime geç. Bu politika hakkındaki soruların için: %1$s</string>
+    <string name="privacy_s6_title">Değişiklikler</string>
+    <string name="privacy_s6_body">Bu politikadaki her değişiklik, kaynak kod deposundaki PRIVACY.md dosyasında yayınlanır.</string>
+</resources>

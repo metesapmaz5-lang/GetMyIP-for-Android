@@ -27,6 +27,12 @@ class AppSettings(context: Context) {
             prefs.edit().putBoolean(KEY_NOTIFY, value).apply()
         }
 
+    var onboardingDone: Boolean
+        get() = prefs.getBoolean(KEY_ONBOARDING, false)
+        set(value) {
+            prefs.edit().putBoolean(KEY_ONBOARDING, value).apply()
+        }
+
     fun provider(): IpProvider = when (providerId) {
         PROVIDER_IFCONFIG -> IfconfigCoProvider
         PROVIDER_CUSTOM -> Providers.custom(customUrl) ?: IpLeakProvider
@@ -40,5 +46,6 @@ class AppSettings(context: Context) {
         private const val KEY_PROVIDER = "provider"
         private const val KEY_CUSTOM_URL = "custom_url"
         private const val KEY_NOTIFY = "notify_on_change"
+        private const val KEY_ONBOARDING = "onboarding_done"
     }
 }

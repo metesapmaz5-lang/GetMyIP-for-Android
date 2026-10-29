@@ -12,6 +12,11 @@
 - DNS leak test (ipleak.net)
 - Learn section: what an IP address is, IPv4 and IPv6, how your IP changes, example tools, VPN or Tor
 - `docs/external-links.md`: every external address the app uses
+- First launch screens: welcome, privacy summary, notification permission
+- Privacy policy and KVKK information notice, in the app and in `PRIVACY.md`
+- App icon
+- Debug builds only: the last crash is shown on the next launch and can be copied
+- Nothing is copied to Android cloud backups or device transfers
 
 ### Changed
 - Network requests now use OkHttp

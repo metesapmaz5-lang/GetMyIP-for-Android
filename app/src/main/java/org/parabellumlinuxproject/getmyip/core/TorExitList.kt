@@ -2,7 +2,8 @@ package org.parabellumlinuxproject.getmyip.core
 
 /**
  * Downloads the Tor Project's public exit list and checks it on the device.
- * The user's IP address is never sent to the Tor Project.
+ * The app never asks the Tor Project about the user's address. Like any download,
+ * torproject.org sees the connection itself.
  */
 object TorExitList {
     const val NAME = "torproject.org"
