@@ -26,5 +26,30 @@
     <string name="net_other">Diğer</string>
     <string name="net_offline">Bağlantı yok</string>
     <string name="data_sources">Veri: %1$s · Tor listesi: %2$s</string>
-    <string name="alpha_note">v0.1.0-alpha · Gerçek cihazda test edilmedi</string>
+
+    <string name="settings">Ayarlar</string>
+    <string name="about">Hakkında</string>
+    <string name="back">Geri</string>
+    <string name="settings_provider_title">IP veri sağlayıcısı</string>
+    <string name="settings_provider_note">Seçtiğin sağlayıcı, girdiğin her site gibi IP adresini görür.</string>
+    <string name="provider_ipleak_desc">Varsayılan</string>
+    <string name="provider_ifconfig_desc">Açık kaynak echoip (BSD-3-Clause)</string>
+    <string name="provider_custom">Kendi echoip sunucun</string>
+    <string name="provider_custom_desc">Hiçbir üçüncü taraf IP adresini görmez</string>
+    <string name="custom_url_label">Sunucu adresi (https://…)</string>
+    <string name="save">Kaydet</string>
+    <string name="saved">Kaydedildi.</string>
+    <string name="custom_url_invalid">Geçerli bir https:// adresi gir.</string>
+
+    <string name="about_version">Sürüm %1$s</string>
+    <string name="about_built_by">Geliştiren</string>
+    <string name="about_developer">Geliştirici</string>
+    <string name="about_license">Özgür yazılımdır, GNU Genel Kamu Lisansı v3.0 ile lisanslanmıştır.</string>
+    <string name="about_source">Kaynak kod</string>
+    <string name="about_contact">İletişim</string>
+    <string name="about_funding_title">Bağımsızlık</string>
+    <string name="about_funding">Bağış linki, sponsor ya da affiliate link yok. GetMyIP hiç kimseden para almaz.</string>
+    <string name="about_not_affiliated">ipleak.net, AirVPN, ifconfig.co veya herhangi bir VPN sağlayıcısıyla bağlantılı değildir.</string>
+    <string name="about_support_tor">Tor Project ve özgür, açık internet misyonunu destekliyoruz.</string>
+    <string name="about_licenses_title">Açık kaynak lisansları</string>
 </resources>

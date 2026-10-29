@@ -1,5 +1,15 @@
 # Changelog
 
+## v1.0.0 "Vigil" (in development)
+
+### Added
+- Choice of IP data provider: ipleak.net (default), ifconfig.co or your own echoip server
+- IPv4 and IPv6 are checked separately with every provider
+- Settings and About screens
+
+### Changed
+- Network requests now use OkHttp
+
 ## v0.1.0-alpha
 
 > Not tested on a real device. Build check only.

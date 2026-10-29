@@ -4,21 +4,16 @@ import android.net.ConnectivityManager
 import android.net.Network
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.ColumnScope
-import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.text.selection.SelectionContainer
-import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
-import androidx.compose.material3.Card
-import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
@@ -32,27 +27,31 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.unit.dp
 import kotlinx.coroutines.delay
 import org.parabellumlinuxproject.getmyip.R
 import org.parabellumlinuxproject.getmyip.Snapshot
 import org.parabellumlinuxproject.getmyip.core.IpInfo
-import org.parabellumlinuxproject.getmyip.core.IpLeak
+import org.parabellumlinuxproject.getmyip.core.IpLeakProvider
 import org.parabellumlinuxproject.getmyip.core.TorExitList
 import org.parabellumlinuxproject.getmyip.net.Transport
+import org.parabellumlinuxproject.getmyip.settings.AppSettings
 import org.parabellumlinuxproject.getmyip.takeSnapshot
 
 @Composable
-fun MainScreen() {
+fun HomeScreen(onOpen: (Screen) -> Unit) {
     val context = LocalContext.current.applicationContext
+    val settings = remember { AppSettings(context) }
     var snapshot by remember { mutableStateOf<Snapshot?>(null) }
+    var providerName by remember { mutableStateOf(IpLeakProvider.displayName) }
     var loading by remember { mutableStateOf(false) }
     var refreshKey by remember { mutableIntStateOf(0) }
 
     LaunchedEffect(refreshKey) {
         loading = true
         if (refreshKey > 0) delay(1_000) // let a new network settle
-        snapshot = takeSnapshot(context)
+        val provider = settings.provider()
+        providerName = provider.displayName
+        snapshot = takeSnapshot(context, provider)
         loading = false
     }
 
@@ -73,14 +72,7 @@ fun MainScreen() {
     }
 
     Scaffold { padding ->
-        Column(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(padding)
-                .verticalScroll(rememberScrollState())
-                .padding(horizontal = 16.dp, vertical = 12.dp),
-            verticalArrangement = Arrangement.spacedBy(12.dp),
-        ) {
+        PageColumn(padding) {
             Header()
             if (loading) LinearProgressIndicator(modifier = Modifier.fillMaxWidth())
             val s = snapshot
@@ -99,16 +91,14 @@ fun MainScreen() {
             ) {
                 Text(stringResource(R.string.refresh))
             }
-            Text(
-                stringResource(R.string.data_sources, IpLeak.NAME, TorExitList.NAME),
-                style = MaterialTheme.typography.bodySmall,
-                color = MaterialTheme.colorScheme.onSurfaceVariant,
-            )
-            Text(
-                stringResource(R.string.alpha_note),
-                style = MaterialTheme.typography.bodySmall,
-                color = MaterialTheme.colorScheme.onSurfaceVariant,
-            )
+            SmallNote(stringResource(R.string.data_sources, providerName, TorExitList.NAME))
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween,
+            ) {
+                TextButton(onClick = { onOpen(Screen.SETTINGS) }) { Text(stringResource(R.string.settings)) }
+                TextButton(onClick = { onOpen(Screen.ABOUT) }) { Text(stringResource(R.string.about)) }
+            }
         }
     }
 }
@@ -127,29 +117,6 @@ private fun Header() {
             style = MaterialTheme.typography.bodyMedium,
             color = MaterialTheme.colorScheme.onSurfaceVariant,
         )
-    }
-}
-
-@Composable
-private fun InfoCard(title: String, content: @Composable ColumnScope.() -> Unit) {
-    Card(
-        modifier = Modifier.fillMaxWidth(),
-        colors = CardDefaults.cardColors(
-            containerColor = MaterialTheme.colorScheme.surface,
-            contentColor = MaterialTheme.colorScheme.onSurface,
-        ),
-    ) {
-        Column(
-            modifier = Modifier.padding(16.dp),
-            verticalArrangement = Arrangement.spacedBy(4.dp),
-        ) {
-            Text(
-                title,
-                style = MaterialTheme.typography.labelLarge,
-                color = MaterialTheme.colorScheme.onSurfaceVariant,
-            )
-            content()
-        }
     }
 }
 
@@ -209,14 +176,6 @@ private fun NetworkCard(s: Snapshot?) {
             LabeledValue(R.string.local_ip, s.net.localAddresses.joinToString("\n").ifEmpty { null })
         }
     }
-}
-
-@Composable
-private fun LabeledValue(label: Int, value: String?) {
-    Text(
-        "${stringResource(label)}: ${value ?: "—"}",
-        style = MaterialTheme.typography.bodyLarge,
-    )
 }
 
 private fun transportLabel(t: Transport): Int = when (t) {

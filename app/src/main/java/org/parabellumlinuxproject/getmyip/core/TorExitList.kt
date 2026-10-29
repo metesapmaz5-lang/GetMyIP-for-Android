@@ -15,7 +15,7 @@ object TorExitList {
     fun get(now: Long = System.currentTimeMillis()): Set<String> {
         val c = cached
         if (c != null && now - cachedAt < MAX_AGE_MS) return c
-        val fresh = parse(Http.get(URL_LIST, timeoutMs = 20_000))
+        val fresh = parse(Net.get(URL_LIST))
         cached = fresh
         cachedAt = now
         return fresh

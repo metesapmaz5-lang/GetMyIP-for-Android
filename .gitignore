@@ -11,3 +11,4 @@ build/
 *.jks
 *.keystore
 keystore.properties
+*.p12

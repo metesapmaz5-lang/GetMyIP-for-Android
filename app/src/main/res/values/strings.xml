@@ -28,5 +28,30 @@
     <string name="net_other">Other</string>
     <string name="net_offline">No connection</string>
     <string name="data_sources">Data: %1$s · Tor list: %2$s</string>
-    <string name="alpha_note">v0.1.0-alpha · Not tested on a real device</string>
+
+    <string name="settings">Settings</string>
+    <string name="about">About</string>
+    <string name="back">Back</string>
+    <string name="settings_provider_title">IP data provider</string>
+    <string name="settings_provider_note">The provider you choose sees your IP address, just like any website you visit.</string>
+    <string name="provider_ipleak_desc">Default</string>
+    <string name="provider_ifconfig_desc">Open source echoip (BSD-3-Clause)</string>
+    <string name="provider_custom">Your own echoip server</string>
+    <string name="provider_custom_desc">No third party sees your IP address</string>
+    <string name="custom_url_label">Server address (https://…)</string>
+    <string name="save">Save</string>
+    <string name="saved">Saved.</string>
+    <string name="custom_url_invalid">Enter a valid https:// address.</string>
+
+    <string name="about_version">Version %1$s</string>
+    <string name="about_built_by">Built by</string>
+    <string name="about_developer">Developer</string>
+    <string name="about_license">Free software, licensed under the GNU General Public License v3.0.</string>
+    <string name="about_source">Source code</string>
+    <string name="about_contact">Contact</string>
+    <string name="about_funding_title">Independence</string>
+    <string name="about_funding">No donation links, no sponsors and no affiliate links. GetMyIP receives no money from anyone.</string>
+    <string name="about_not_affiliated">Not affiliated with ipleak.net, AirVPN, ifconfig.co or any VPN provider.</string>
+    <string name="about_support_tor">We support the Tor Project and its mission for a free and open internet.</string>
+    <string name="about_licenses_title">Open source licenses</string>
 </resources>

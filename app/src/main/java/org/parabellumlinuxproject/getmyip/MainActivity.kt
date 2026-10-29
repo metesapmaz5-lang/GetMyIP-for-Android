@@ -6,7 +6,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.SystemBarStyle
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import org.parabellumlinuxproject.getmyip.ui.MainScreen
+import org.parabellumlinuxproject.getmyip.ui.AppRoot
 import org.parabellumlinuxproject.getmyip.ui.PlpTheme
 
 class MainActivity : ComponentActivity() {
@@ -16,6 +16,6 @@ class MainActivity : ComponentActivity() {
             statusBarStyle = SystemBarStyle.dark(Color.TRANSPARENT),
             navigationBarStyle = SystemBarStyle.dark(Color.TRANSPARENT),
         )
-        setContent { PlpTheme { MainScreen() } }
+        setContent { PlpTheme { AppRoot() } }
     }
 }
