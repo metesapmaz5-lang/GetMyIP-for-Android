@@ -1,6 +1,6 @@
 # Changelog
 
-## v1.0.0 "Vigil" (in development)
+## v1.0.0 "Vigil" (2026-10-29)
 
 ### Added
 - Choice of IP data provider: ipleak.net (default), ifconfig.co or your own echoip server
