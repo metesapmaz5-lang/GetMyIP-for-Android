@@ -24,7 +24,7 @@ Thank you for your patience.
 
 GetMyIP is a simple, privacy-respecting Android app that shows what the internet sees about your connection: your public IP address, your provider and whether your traffic goes through a VPN or Tor.
 
-**Status:** 🚧 Planning stage. No code has been published yet.
+**Status:** 🚧 Alpha. v0.1.0-alpha has not been tested on a real device yet.
 
 ## Planned features (v1.0 "Vigil")
 
@@ -45,15 +45,14 @@ Background monitoring (alerts while the app is closed) is planned for v2.
 
 | Version | What it brings | APK |
 | --- | --- | --- |
-| 0.x alpha | Features added one by one | No, source only |
-| 1.0.0 beta / rc | Feature complete, testing | No, source only |
+| v0.1.0-alpha | IP, ISP, VPN and Tor detection | No, source only |
 | **1.0.0 Stable "Vigil"** | First official release | Yes, signed |
 | v2 | Background monitoring, VPN provider hints, reproducible builds | Yes, signed |
 | GetMyIP for Linux | Simple desktop app | Planned |
 
 ## Releases and verification
 
-- Only **stable** releases include an APK. Alpha, beta and rc versions are published as source code tags.
+- Only **stable** releases include an APK. The alpha is published as a source code tag only.
 - Every APK is signed with our own key. Google has no access to it.
 - Each release lists the **SHA-256 checksum** of the APK and the **signing certificate fingerprint**, so you can verify the file yourself.
 
@@ -65,7 +64,13 @@ GetMyIP has no built-in update checker, so the app never connects anywhere excep
 
 ## Build from source
 
-Build instructions will be added with the first alpha release.
+Requirements: JDK 17 or newer and the Android SDK command-line tools (`ANDROID_HOME` set).
+
+```bash
+./gradlew assembleDebug
+```
+
+The APK will be in `app/build/outputs/apk/debug/`.
 
 Note: an APK you build yourself is signed with a different key. To switch to an official release later, uninstall your own build first.
 

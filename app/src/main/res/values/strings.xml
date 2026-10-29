@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name" translatable="false">PLP GetMyIP</string>
+    <string name="subtitle" translatable="false">Parabellum Linux Project</string>
+    <string name="public_ipv4">Public IPv4</string>
+    <string name="public_ipv6">Public IPv6</string>
+    <string name="provider">Provider</string>
+    <string name="isp">ISP</string>
+    <string name="asn">ASN</string>
+    <string name="location">Location</string>
+    <string name="network">Network</string>
+    <string name="connection">Connection</string>
+    <string name="vpn">VPN</string>
+    <string name="vpn_on">Active</string>
+    <string name="vpn_off">Not active</string>
+    <string name="tor">Tor</string>
+    <string name="tor_yes">Connected through Tor</string>
+    <string name="tor_no">Not using Tor</string>
+    <string name="tor_unknown">Could not check</string>
+    <string name="local_ip">Local IP</string>
+    <string name="not_available">Not available</string>
+    <string name="loading">Checking…</string>
+    <string name="refresh">Refresh</string>
+    <string name="net_wifi">Wi-Fi</string>
+    <string name="net_cellular">Mobile data</string>
+    <string name="net_ethernet">Ethernet</string>
+    <string name="net_vpn">VPN</string>
+    <string name="net_other">Other</string>
+    <string name="net_offline">No connection</string>
+    <string name="data_sources">Data: %1$s · Tor list: %2$s</string>
+    <string name="alpha_note">v0.1.0-alpha · Not tested on a real device</string>
+</resources>

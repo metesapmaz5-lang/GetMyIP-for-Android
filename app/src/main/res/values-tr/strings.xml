@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="public_ipv4">Genel IPv4</string>
+    <string name="public_ipv6">Genel IPv6</string>
+    <string name="provider">Servis sağlayıcı</string>
+    <string name="isp">ISP</string>
+    <string name="asn">ASN</string>
+    <string name="location">Konum</string>
+    <string name="network">Ağ</string>
+    <string name="connection">Bağlantı</string>
+    <string name="vpn">VPN</string>
+    <string name="vpn_on">Açık</string>
+    <string name="vpn_off">Kapalı</string>
+    <string name="tor">Tor</string>
+    <string name="tor_yes">Tor üzerinden bağlısın</string>
+    <string name="tor_no">Tor kullanılmıyor</string>
+    <string name="tor_unknown">Kontrol edilemedi</string>
+    <string name="local_ip">Yerel IP</string>
+    <string name="not_available">Yok</string>
+    <string name="loading">Kontrol ediliyor…</string>
+    <string name="refresh">Yenile</string>
+    <string name="net_wifi">Wi-Fi</string>
+    <string name="net_cellular">Mobil veri</string>
+    <string name="net_ethernet">Ethernet</string>
+    <string name="net_vpn">VPN</string>
+    <string name="net_other">Diğer</string>
+    <string name="net_offline">Bağlantı yok</string>
+    <string name="data_sources">Veri: %1$s · Tor listesi: %2$s</string>
+    <string name="alpha_note">v0.1.0-alpha · Gerçek cihazda test edilmedi</string>
+</resources>
