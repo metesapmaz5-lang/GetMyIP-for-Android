@@ -3,6 +3,11 @@ plugins {
     id("org.jetbrains.kotlin.plugin.compose")
 }
 
+// The release key never enters this repository.
+// The password is read from an environment variable during the build only.
+val releaseStore = file("${System.getProperty("user.home")}/.plp-keys/getmyip-release.p12")
+val releasePassword: String? = System.getenv("GETMYIP_KEY_PASSWORD")
+
 android {
     namespace = "org.parabellumlinuxproject.getmyip"
     compileSdk = 37
@@ -15,9 +20,22 @@ android {
         versionName = "1.0.0"
     }
 
+    signingConfigs {
+        create("release") {
+            storeFile = releaseStore
+            storeType = "PKCS12"
+            storePassword = releasePassword
+            keyAlias = "getmyip"
+            keyPassword = releasePassword
+        }
+    }
+
     buildTypes {
         release {
             isMinifyEnabled = false
+            if (releaseStore.exists() && releasePassword != null) {
+                signingConfig = signingConfigs.getByName("release")
+            }
         }
     }
 
