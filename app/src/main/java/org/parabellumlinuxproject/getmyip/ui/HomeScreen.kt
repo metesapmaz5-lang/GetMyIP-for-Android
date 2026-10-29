@@ -121,6 +121,13 @@ fun HomeScreen(onOpen: (Screen) -> Unit) {
                 horizontalArrangement = Arrangement.SpaceBetween,
             ) {
                 TextButton(onClick = { onOpen(Screen.HISTORY) }) { Text(stringResource(R.string.history)) }
+                TextButton(onClick = { onOpen(Screen.DNS) }) { Text(stringResource(R.string.dns_test)) }
+                TextButton(onClick = { onOpen(Screen.LEARN) }) { Text(stringResource(R.string.learn)) }
+            }
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween,
+            ) {
                 TextButton(onClick = { onOpen(Screen.SETTINGS) }) { Text(stringResource(R.string.settings)) }
                 TextButton(onClick = { onOpen(Screen.ABOUT) }) { Text(stringResource(R.string.about)) }
             }

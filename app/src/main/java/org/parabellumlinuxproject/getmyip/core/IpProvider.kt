@@ -14,6 +14,8 @@ interface IpProvider {
 private fun JSONObject.text(key: String): String? =
     if (has(key) && !isNull(key)) optString(key).trim().ifEmpty { null } else null
 
+internal val IP_LITERAL = Regex("^[0-9a-fA-F:.]+$")
+
 object IpLeakProvider : IpProvider {
     override val id = "ipleak"
     override val displayName = "ipleak.net"
@@ -24,6 +26,12 @@ object IpLeakProvider : IpProvider {
             Family.V6 -> "https://ipv6.ipleak.net/json/"
         }
         return parse(Net.get(url, family, accept = "application/json"))
+    }
+
+    /** Looks up details of another IP address, for example a DNS server. */
+    fun lookup(ip: String): IpInfo {
+        require(IP_LITERAL.matches(ip)) { "Not an IP address" }
+        return parse(Net.get("https://ipleak.net/json/$ip", accept = "application/json"))
     }
 
     internal fun parse(body: String): IpInfo {

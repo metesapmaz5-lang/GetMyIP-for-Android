@@ -7,16 +7,19 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 
-enum class Screen { HOME, HISTORY, SETTINGS, ABOUT }
+enum class Screen { HOME, HISTORY, DNS, LEARN, SETTINGS, ABOUT }
 
 @Composable
 fun AppRoot() {
     var screen by rememberSaveable { mutableStateOf(Screen.HOME) }
-    BackHandler(enabled = screen != Screen.HOME) { screen = Screen.HOME }
+    val goHome = { screen = Screen.HOME }
+    BackHandler(enabled = screen != Screen.HOME) { goHome() }
     when (screen) {
         Screen.HOME -> HomeScreen(onOpen = { screen = it })
-        Screen.HISTORY -> HistoryScreen(onBack = { screen = Screen.HOME })
-        Screen.SETTINGS -> SettingsScreen(onBack = { screen = Screen.HOME })
-        Screen.ABOUT -> AboutScreen(onBack = { screen = Screen.HOME })
+        Screen.HISTORY -> HistoryScreen(onBack = goHome)
+        Screen.DNS -> DnsTestScreen(onBack = goHome)
+        Screen.LEARN -> LearnScreen(onBack = goHome)
+        Screen.SETTINGS -> SettingsScreen(onBack = goHome)
+        Screen.ABOUT -> AboutScreen(onBack = goHome)
     }
 }

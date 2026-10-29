@@ -9,6 +9,9 @@
 - IP history, stored only on the device (up to 500 entries, can be cleared)
 - "Your IP changed since last time" notice when the app opens
 - Notification when the IP changes while the app is open in the background (addresses hidden on the lock screen)
+- DNS leak test (ipleak.net)
+- Learn section: what an IP address is, IPv4 and IPv6, how your IP changes, example tools, VPN or Tor
+- `docs/external-links.md`: every external address the app uses
 
 ### Changed
 - Network requests now use OkHttp

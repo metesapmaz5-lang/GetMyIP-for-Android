@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="learn">Öğren</string>
+    <string name="learn_ip_title">IP nedir?</string>
+    <string name="learn_ip_body">IP adresi, internete bağlanan her cihazın adresidir. Bir web sitesine girdiğinde site cevabı bu adrese gönderir, tıpkı bir mektubun ev adresine gitmesi gibi.\n\nİki tür IP adresin vardır. Yerel IP, modeminin sana verdiği adrestir (ör. 192.168.1.5) ve sadece kendi ağının içinde geçerlidir. Genel IP ise internet servis sağlayıcının (ISP) verdiği adrestir. Girdiğin her site, reklam ağı ve uygulama bu adresi görür.\n\nGenel IP adresinden kim olduğun doğrudan anlaşılmaz. Ama hangi servis sağlayıcıyı kullandığın, yaklaşık hangi şehirde olduğun ve farklı sitelerdeki hareketlerin birbirine bağlanabilir. Servis sağlayıcın ise o IP\'yi o an kimin kullandığını bilir.</string>
+    <string name="learn_versions_title">IPv4 ve IPv6</string>
+    <string name="learn_versions_body">IPv4 ve IPv6, IP adreslerinin iki farklı sürümüdür ve cihazının ikisi birden olabilir.\n\nIPv4 şöyle görünür: 203.0.113.42. Yaklaşık 4,3 milyar IPv4 adresi vardır ve bu, dünyadaki cihazlara yetmez. Bu yüzden servis sağlayıcılar çoğu zaman tek bir genel IPv4 adresini birçok müşteri arasında paylaştırır (CGNAT). Mobil veride bu çok yaygındır.\n\nIPv6 şöyle görünür: 2001:db8::1. Adres sayısı pratikte tükenmez, bu yüzden cihazın kendine ait bir genel adres alabilir.\n\nBir VPN sadece IPv4\'ü koruyorsa IPv6 trafiğin VPN\'in dışından gidebilir ve gerçek adresin görünebilir. GetMyIP bu yüzden iki adresi ayrı ayrı gösterir.</string>
+    <string name="learn_change_title">IP nasıl değişir?</string>
+    <string name="learn_change_body">Genel IP adresin iki şekilde değişir: servis sağlayıcın yeni bir adres verir ya da trafiğin başka bir sunucu üzerinden çıkar.\n\nAraç gerektirmeyen yollar (adresi değiştirir ama seni gizlemez):\n• Modemi yeniden başlat. Çoğu ev bağlantısında yeniden bağlanınca yeni adres gelir. Statik IP\'n varsa değişmez.\n• Wi-Fi ve mobil veri arasında geçiş yap. İki farklı ağ, iki farklı genel IP demektir.\n• Uçak modunu açıp kapat. Mobil veride genellikle yeni bir adres alırsın.\n\nYeni adres de yine servis sağlayıcına aittir ve sağlayıcın adresi kimin kullandığını bilmeye devam eder.\n\nAraçla değiştirdiğinde trafiğin başka bir yerden çıkar: bir VPN sunucusundan ya da Tor ağından. Siteler o adresi görür. Servis sağlayıcın hangi sitelere girdiğini göremez, sadece VPN\'e ya da Tor\'a bağlandığını görür.</string>
+    <string name="learn_tools_title">Araçlar</string>
+    <string name="learn_tools_intro">Bu araçlar örnek olarak, alfabetik sırayla listelenmiştir. GetMyIP bu araçların hiçbiriyle bağlantılı değildir ve hiçbirinden bir şey almaz.</string>
+    <string name="learn_free">Ücretsiz</string>
+    <string name="learn_paid">Ücretli</string>
+    <string name="platform_linux">Linux (Parrot OS)</string>
+    <string name="platform_android">Android</string>
+    <string name="platform_multi">Android, Linux ve diğerleri</string>
+    <string name="tool_anonsurf">Sistemdeki tüm trafiği Tor üzerinden geçirir. Android\'de yoktur.</string>
+    <string name="tool_orbot">Telefonun trafiğini Tor üzerinden geçirir. Hangi uygulamaların kullanacağını seçebilirsin.</string>
+    <string name="tool_proton_free">Sunucu seçimi sınırlı, ücretsiz VPN katmanı.</string>
+    <string name="tool_riseup">Bağışlarla çalışan VPN. Hesap istemez.</string>
+    <string name="tool_torbrowser">Sadece tarayıcı trafiğini Tor üzerinden geçirir. Diğer uygulamaları etkilemez.</string>
+    <string name="tool_ivpn">E-posta istemeden hesap numarasıyla çalışan VPN. Uygulamaları açık kaynak.</string>
+    <string name="tool_mullvad">E-posta istemeden hesap numarasıyla çalışan VPN. Uygulamaları açık kaynak.</string>
+    <string name="tool_proton_plus">Ücretsiz katmana göre daha çok ülke, aynı anda daha çok cihaz ve ek özellikler.</string>
+    <string name="learn_vpn_tor_title">VPN mi, Tor mu?</string>
+    <string name="learn_vpn_tor_body">VPN\'de tüm trafiğini tek bir şirkete emanet edersin, o şirkete güvenmen gerekir. Tor\'da trafiğin üç farklı gönüllü sunucudan geçer ve hiçbiri hem kim olduğunu hem de nereye gittiğini birlikte bilmez. Tor genelde daha yavaştır.\n\nAğında VPN veya Tor bağlantıları engelleniyorsa Tor Browser ve Orbot köprü (bridge) kullanarak bağlanabilir.</string>
+
+    <string name="dns_test">DNS sızıntı testi</string>
+    <string name="dns_intro">Cihazın, açtığın her sitenin adresini bir DNS sunucusuna sorar. Bu test, senin için hangi DNS sunucularının cevap verdiğini gösterir.</string>
+    <string name="dns_start">Testi başlat</string>
+    <string name="dns_running">Test ediliyor…</string>
+    <string name="dns_failed">Test tamamlanamadı. Bağlantını kontrol edip tekrar dene.</string>
+    <string name="dns_none">Hiçbir DNS sunucusu tespit edilemedi. Bazı sunucular (ör. Google Public DNS) bu testte görünmez.</string>
+    <string name="dns_result_title">Cevap veren DNS sunucuları</string>
+    <string name="dns_hint">VPN ya da Tor kullanıyorsan ve burada kendi internet servis sağlayıcını görüyorsan, DNS isteklerin tünelin dışına sızıyor demektir.</string>
+    <string name="dns_private_note">Android ayarlarında Özel DNS açıksa burada o servisi görürsün.</string>
+    <string name="dns_uses">Bu test, seçtiğin sağlayıcıdan bağımsız olarak her zaman %1$s kullanır.</string>
+</resources>

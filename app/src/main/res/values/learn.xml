@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="learn">Learn</string>
+    <string name="learn_ip_title">What is an IP address?</string>
+    <string name="learn_ip_body">An IP address is the address of every device on the internet. When you open a website, the site sends its answer to this address, like a letter going to a home address.\n\nYou have two kinds of IP address. Your local IP is given by your router (for example 192.168.1.5) and only works inside your own network. Your public IP is given by your internet provider (ISP), and every website, ad network and app you use can see it.\n\nA public IP does not reveal your name. But it shows which provider you use and roughly which city you are in, and it can link your activity across sites. Your provider knows who used which IP at any time.</string>
+    <string name="learn_versions_title">IPv4 and IPv6</string>
+    <string name="learn_versions_body">IPv4 and IPv6 are two versions of IP addresses, and your device can have both at once.\n\nIPv4 looks like 203.0.113.42. There are about 4.3 billion IPv4 addresses, which is not enough for every device, so providers often share one public IPv4 address between many customers (CGNAT). This is very common on mobile data.\n\nIPv6 looks like 2001:db8::1. There are practically unlimited IPv6 addresses, so your device can get its own public address.\n\nIf a VPN only protects IPv4, your IPv6 traffic can go outside the VPN and reveal your real address. That is why GetMyIP shows both addresses separately.</string>
+    <string name="learn_change_title">How does your IP change?</string>
+    <string name="learn_change_body">Your public IP changes in two ways: your provider gives you a new address, or your traffic leaves through another server.\n\nWithout any tools (this changes your address but does not hide you):\n• Restart your router. Most home connections get a new address after reconnecting, unless you have a static IP.\n• Switch between Wi-Fi and mobile data. Two networks, two public IPs.\n• Turn airplane mode on and off. On mobile data you usually get a new address.\n\nThe new address still belongs to your provider, and your provider still knows who uses it.\n\nWith tools, your traffic leaves through another place: a VPN server or the Tor network. Websites see that address instead. Your provider only sees that you are connected to a VPN or Tor, not which sites you visit.</string>
+    <string name="learn_tools_title">Tools</string>
+    <string name="learn_tools_intro">These tools are listed as examples, in alphabetical order. GetMyIP is not affiliated with any of them and receives nothing from them.</string>
+    <string name="learn_free">Free</string>
+    <string name="learn_paid">Paid</string>
+    <string name="platform_linux">Linux (Parrot OS)</string>
+    <string name="platform_android">Android</string>
+    <string name="platform_multi">Android, Linux and more</string>
+    <string name="tool_anonsurf">Routes all system traffic through Tor. Not available on Android.</string>
+    <string name="tool_orbot">Routes your phone\'s traffic through Tor. You can choose which apps use it.</string>
+    <string name="tool_proton_free">Free VPN tier with limited server choice.</string>
+    <string name="tool_riseup">VPN run on donations. No account needed.</string>
+    <string name="tool_torbrowser">Routes only browser traffic through Tor. Other apps are not affected.</string>
+    <string name="tool_ivpn">VPN that works with an account number, no email needed. Open source apps.</string>
+    <string name="tool_mullvad">VPN that works with an account number, no email needed. Open source apps.</string>
+    <string name="tool_proton_plus">More countries, more devices at the same time and extra features compared to the free tier.</string>
+    <string name="learn_vpn_tor_title">VPN or Tor?</string>
+    <string name="learn_vpn_tor_body">With a VPN, you trust one company with all your traffic. With Tor, your traffic passes through three volunteer servers, and none of them knows both who you are and where you are going. Tor is usually slower.\n\nIf VPN or Tor connections are blocked on your network, Tor Browser and Orbot can connect using bridges.</string>
+
+    <string name="dns_test">DNS leak test</string>
+    <string name="dns_intro">Your device asks a DNS server for the address of every site you open. This test shows which DNS servers answered for you.</string>
+    <string name="dns_start">Start test</string>
+    <string name="dns_running">Testing…</string>
+    <string name="dns_failed">The test could not be completed. Check your connection and try again.</string>
+    <string name="dns_none">No DNS server was detected. Some resolvers (for example Google Public DNS) do not show up in this test.</string>
+    <string name="dns_result_title">DNS servers that answered</string>
+    <string name="dns_hint">If you use a VPN or Tor and you see your own internet provider here, your DNS requests are leaking outside the tunnel.</string>
+    <string name="dns_private_note">If Private DNS is turned on in Android settings, you will see that service here.</string>
+    <string name="dns_uses">This test always uses %1$s, whatever provider you selected.</string>
+</resources>
